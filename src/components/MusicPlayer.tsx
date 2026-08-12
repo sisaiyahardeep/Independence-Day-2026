@@ -14,17 +14,43 @@ export default function MusicPlayer({ interacted }: { interacted: boolean }) {
   }, []);
 
   useEffect(() => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(songs[songIndex]);
-      audioRef.current.loop = true;
-    }
+    let isMounted = true;
 
-    if (interacted && !isPlaying) {
-      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {
-        // Autoplay blocked
-      });
+    const initAudio = async () => {
+      try {
+        const response = await fetch(songs[songIndex], { method: 'HEAD' });
+        const contentType = response.headers.get('content-type');
+        
+        // Only initialize Audio if the file exists and is not an HTML fallback
+        if (response.ok && contentType && !contentType.includes('text/html')) {
+          if (!audioRef.current && isMounted) {
+            audioRef.current = new Audio(songs[songIndex]);
+            audioRef.current.loop = true;
+            
+            if (interacted && !isPlaying) {
+              audioRef.current.play().then(() => {
+                if (isMounted) setIsPlaying(true);
+              }).catch(() => {
+                // Autoplay blocked or failed
+              });
+            }
+          }
+        } else {
+          console.warn(`Audio file ${songs[songIndex]} not found. Please upload it to the public directory.`);
+        }
+      } catch (err) {
+        console.warn('Could not verify audio file.');
+      }
+    };
+
+    if (!audioRef.current) {
+      initAudio();
+    } else if (interacted && !isPlaying) {
+      audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
     }
-  }, [interacted, songIndex]);
+    
+    return () => { isMounted = false; };
+  }, [interacted, songIndex, isPlaying]);
 
   const toggleMute = () => {
     if (audioRef.current) {
