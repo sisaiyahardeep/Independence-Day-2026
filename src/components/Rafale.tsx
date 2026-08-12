@@ -21,7 +21,7 @@ export default function Rafale() {
         className="absolute flex items-center justify-center opacity-90 drop-shadow-2xl"
       >
         <div className="relative">
-          <img src="/rafale.png" alt="Rafale" className="w-48 md:w-72 object-contain filter drop-shadow-xl blur-[0.5px]" />
+          <img src="./rafale.png" alt="Rafale" className="w-48 md:w-72 object-contain filter drop-shadow-xl blur-[0.5px]" />
           
           {/* Smoke trails */}
           <div className="absolute right-[90%] top-1/2 -translate-y-1/2 flex flex-col gap-0.5 opacity-60">
@@ -40,7 +40,7 @@ export default function Rafale() {
         className="absolute flex items-center justify-center opacity-80 drop-shadow-2xl"
       >
         <div className="relative">
-          <img src="/rafale.png" alt="Rafale" className="w-40 md:w-60 object-contain filter drop-shadow-xl blur-[1px]" />
+          <img src="./rafale.png" alt="Rafale" className="w-40 md:w-60 object-contain filter drop-shadow-xl blur-[1px]" />
           
           {/* Smoke trails */}
           <div className="absolute right-[90%] top-1/2 -translate-y-1/2 flex flex-col gap-0.5 opacity-50">

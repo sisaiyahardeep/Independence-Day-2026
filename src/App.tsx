@@ -115,7 +115,7 @@ export default function App() {
         >
           <div className="aspect-[4/3] w-full relative">
             <img 
-              src="/banner.webp" 
+              src="./banner.webp" 
               alt="Independence Day Hero" 
               className="w-full h-full object-cover"
               onError={(e) => {
