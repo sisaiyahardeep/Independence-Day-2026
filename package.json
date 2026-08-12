@@ -6,6 +6,7 @@
     "build": "echo 'Static site, no build needed for GitHub Pages'"
   },
   "devDependencies": {
+    "serve": "^14.2.6",
     "vite": "^5.0.0"
   }
 }

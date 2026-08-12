@@ -23,7 +23,7 @@
     
     <!-- Rafale Flyover -->
     <div id="rafale-container" class="rafale-container hidden">
-        <img src="rafale.png" alt="Rafale Jet" class="w-48 md:w-72 object-contain drop-shadow-2xl">
+        <img src="./rafale.png" alt="Rafale Jet" class="w-48 md:w-72 object-contain drop-shadow-2xl">
         <div class="smoke-trail">
             <div class="smoke smoke-orange"></div>
             <div class="smoke smoke-white"></div>
@@ -35,11 +35,6 @@
     <div class="fixed top-4 left-4 z-30 waving-flag">🇮🇳</div>
     <div class="fixed top-4 right-4 z-30 waving-flag transform scale-x-[-1]">🇮🇳</div>
 
-    <!-- Audio Player Toggle -->
-    <button id="music-toggle" class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full glass-card hover:scale-110 active:scale-95 transition-all shadow-xl border border-white/20">
-        <svg id="icon-play" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        <svg id="icon-pause" class="w-6 h-6 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-    </button>
     <audio id="bg-audio" loop playsinline></audio>
 
     <!-- Main Content -->
@@ -48,7 +43,7 @@
         <!-- Hero Image Card -->
         <div class="w-full relative rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(255,153,51,0.2)] ring-1 ring-white/10 mb-8 transform hover:scale-[1.02] transition-transform duration-500">
             <div class="aspect-[4/3] w-full relative group">
-                <img src="banner.webp" alt="Independence Day Banner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.style.display='none'">
+                <img src="./banner.webp" alt="Independence Day Banner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" >
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
                 <div class="absolute bottom-6 left-0 right-0 text-center px-4">
                     <h1 class="text-4xl md:text-5xl font-black tracking-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] leading-tight">

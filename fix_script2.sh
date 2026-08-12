@@ -1,0 +1,1 @@
+sed -i 's/}).catch(e => console.warn("Autoplay prevented:", e));/}).catch(e => { console.warn("Autoplay prevented:", e); isAudioPlaying = false; iconPause.classList.add('\''hidden'\''); iconPlay.classList.remove('\''hidden'\''); });/g' script.js
