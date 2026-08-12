@@ -1,7 +1,13 @@
 import { Volume2, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-const songs = ['./song1.mp3', './song2.mp3', './song3.mp3', './song4.mp3', './song5.mp3'];
+import song1 from '../assets/song1.mp3';
+import song2 from '../assets/song2.mp3';
+import song3 from '../assets/song3.mp3';
+import song4 from '../assets/song4.mp3';
+import song5 from '../assets/song5.mp3';
+
+const songs = [song1, song2, song3, song4, song5];
 
 export default function MusicPlayer({ interacted }: { interacted: boolean }) {
   const [isPlaying, setIsPlaying] = useState(false);

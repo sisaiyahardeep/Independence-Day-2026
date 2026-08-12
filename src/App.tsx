@@ -11,6 +11,7 @@ import Balloons from './components/Balloons';
 import MusicPlayer from './components/MusicPlayer';
 import Rafale from './components/Rafale';
 import WavingFlag from './components/WavingFlag';
+import bannerImg from './assets/banner.webp';
 
 const messages = [
   "🇮🇳 उन वीर शहीदों को नमन, जिनकी कुर्बानी से आज हम आज़ाद हैं। आपको स्वतंत्रता दिवस की हार्दिक शुभकामनाएँ।",
@@ -115,7 +116,7 @@ export default function App() {
         >
           <div className="aspect-[4/3] w-full relative">
             <img 
-              src="./banner.webp" 
+              src={bannerImg} 
               alt="Independence Day Hero" 
               className="w-full h-full object-cover"
               onError={(e) => {
