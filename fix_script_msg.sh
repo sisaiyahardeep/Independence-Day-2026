@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > script.js
 // Constants
 const messages = [
     "Happy Independence Day! 🇮🇳 Veer shahidon ko naman.",
@@ -198,3 +199,4 @@ function startBalloons() {
 }
 
 init();
+INNER_EOF
