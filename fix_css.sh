@@ -1,8 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom Styles & Animations */
+cat << 'INNER_EOF' > style.css
+/* Custom Styles & Animations for Independence Day App */
 
 /* 3D Liquid Glass UI */
 .glass-card {
@@ -21,7 +18,8 @@
 }
 .waving-flag {
     display: inline-block;
-    animation: wave 2.5s ease-in-out infinite;
+    animation: wave 2s ease-in-out infinite;
+    font-size: 3rem;
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
 }
 
@@ -32,9 +30,10 @@
     width: 45px;
     height: 60px;
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    /* Tricolor Gradient */
     background: linear-gradient(to bottom, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
     box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3), inset 5px 5px 10px rgba(255,255,255,0.4), 0 4px 10px rgba(0,0,0,0.3);
-    animation: floatUp linear infinite forwards;
+    animation: floatUp linear infinite;
     z-index: 10;
 }
 .balloon::before {
@@ -62,7 +61,7 @@
     5% { opacity: 1; }
     33% { transform: translateY(60vh) translateX(-20px) scale(0.9); }
     66% { transform: translateY(20vh) translateX(20px) scale(0.95); }
-    95% { opacity: 1; }
+    90% { opacity: 1; }
     100% { transform: translateY(-30vh) translateX(0) scale(1); opacity: 0; }
 }
 
@@ -75,26 +74,20 @@
     z-index: 40;
     opacity: 0;
 }
-.fly-right-animation {
-    animation: flyRight 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-.fly-left-animation {
-    animation: flyLeft 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-.flip-horizontal {
-    transform: scaleX(-1);
+.fly-animation {
+    animation: flyRight 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 @keyframes flyRight {
-    0% { transform: translate(-50vw, 30vh) scale(0.6) rotate(15deg); opacity: 0; }
+    0% {
+        transform: translate(-50vw, 30vh) scale(0.6) rotate(15deg);
+        opacity: 0;
+    }
     10% { opacity: 1; }
     90% { opacity: 1; }
-    100% { transform: translate(150vw, -30vh) scale(1.3) rotate(15deg); opacity: 0; }
-}
-@keyframes flyLeft {
-    0% { transform: translate(150vw, 30vh) scale(0.6) rotate(-15deg); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translate(-50vw, -30vh) scale(1.3) rotate(-15deg); opacity: 0; }
+    100% {
+        transform: translate(150vw, -30vh) scale(1.3) rotate(15deg);
+        opacity: 0;
+    }
 }
 .smoke-trail {
     position: absolute;
@@ -106,10 +99,6 @@
     gap: 2px;
     opacity: 0.7;
 }
-.fly-left-animation .smoke-trail {
-    right: auto;
-    left: 85%;
-}
 .smoke {
     height: 4px;
     width: 150px;
@@ -120,10 +109,7 @@
 .smoke-white { background: linear-gradient(to right, transparent, #FFFFFF); }
 .smoke-green { background: linear-gradient(to right, transparent, #138808); }
 
-.fly-left-animation .smoke-orange { background: linear-gradient(to left, transparent, #FF9933); }
-.fly-left-animation .smoke-white { background: linear-gradient(to left, transparent, #FFFFFF); }
-.fly-left-animation .smoke-green { background: linear-gradient(to left, transparent, #138808); }
-
 @media (min-width: 768px) {
     .smoke { width: 250px; height: 6px; }
 }
+INNER_EOF

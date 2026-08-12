@@ -1,3 +1,4 @@
+cat << 'INNER_EOF' > script.js
 // Constants
 const messages = [
     "Happy Independence Day 2026! 🇮🇳 Un veer shahidon ko naman, jinki kurbani se aaj hum azaad hain.",
@@ -148,32 +149,23 @@ function triggerConfetti() {
 // Rafale Animation
 function triggerRafale() {
     const rafale = document.getElementById('rafale-container');
-    const rafaleImg = rafale.querySelector('img');
-    
-    rafale.classList.remove('hidden', 'fly-right-animation', 'fly-left-animation');
-    rafaleImg.classList.remove('flip-horizontal');
+    rafale.classList.remove('hidden');
+    rafale.classList.remove('fly-animation');
     
     // Force reflow
     void rafale.offsetWidth;
     
-    // Random direction
-    const flyFromLeft = Math.random() > 0.5;
-    
-    if (flyFromLeft) {
-        rafale.classList.add('fly-right-animation');
-    } else {
-        rafale.classList.add('fly-left-animation');
-        rafaleImg.classList.add('flip-horizontal');
-    }
+    rafale.classList.add('fly-animation');
     
     setTimeout(() => {
-        rafale.classList.remove('fly-right-animation', 'fly-left-animation');
+        rafale.classList.remove('fly-animation');
         rafale.classList.add('hidden');
-    }, 6500); // 6s duration + 500ms buffer
+    }, 4000);
 }
 
 // Random Rafale Flyovers
 setInterval(() => {
+    // Only if document is visible and occasionally
     if (!document.hidden && Math.random() > 0.5) {
         triggerRafale();
     }
@@ -181,36 +173,38 @@ setInterval(() => {
 
 // Balloons
 function createBalloon() {
-    if (document.hidden) return; 
+    if (document.hidden) return; // Don't create if tab is inactive
     
     const container = document.getElementById('balloons-container');
     const balloon = document.createElement('div');
     balloon.className = 'balloon';
     
-    // Horizontal position
-    balloon.style.left = (Math.random() * 90 + 5) + '%'; 
-    // Float speed: faster to reach top (12 to 18 seconds max)
-    balloon.style.animationDuration = (12 + Math.random() * 6) + 's'; 
+    // Random horizontal positioning and float duration
+    balloon.style.left = (Math.random() * 90 + 5) + '%'; // 5% to 95%
+    balloon.style.animationDuration = (15 + Math.random() * 10) + 's'; // Slower float (15-25s)
     
+    // Add knot
     const knot = document.createElement('div');
     knot.className = 'balloon-knot';
     balloon.appendChild(knot);
     
     container.appendChild(balloon);
     
+    // Clean up
     setTimeout(() => {
         if(balloon.parentNode) balloon.remove();
-    }, 18000); // Remove safely after animation
+    }, 30000);
 }
 
 function startBalloons() {
-    // 50% more balloons initially
-    for(let i=0; i<15; i++) {
-        setTimeout(createBalloon, Math.random() * 3000);
+    // Initial batch
+    for(let i=0; i<8; i++) {
+        setTimeout(createBalloon, Math.random() * 5000);
     }
-    // Faster spawn rate
-    setInterval(createBalloon, 1200);
+    // Continuous
+    setInterval(createBalloon, 3000);
 }
 
 // Run initialization
 init();
+INNER_EOF

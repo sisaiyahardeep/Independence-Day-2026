@@ -1,3 +1,4 @@
+cat << 'CSS_EOF' > style.css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -127,3 +128,4 @@
 @media (min-width: 768px) {
     .smoke { width: 250px; height: 6px; }
 }
+CSS_EOF
