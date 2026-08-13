@@ -6,7 +6,7 @@ const messages = [
     "Azaadi ka jashn 2026! Jai Hind, Jai Bharat! 🇮🇳",
     "Bharat Mata ki Jai! Wishing you a proud Independence Day! 🇮🇳"
 ];
-const songs = ['./song1.mp3', './song2.mp3', './song3.mp3', './song4.mp3', './song5.mp3'];
+const songs = ['./song1.mp3', './song2.mp3', './song3.mp3', './song4.mp3', './song5.mp3', './song6.mp3'];
 const colors = ['#FF9933', '#FFFFFF', '#138808'];
 
 // State
@@ -121,7 +121,7 @@ shareBtn.addEventListener('click', () => {
     url.searchParams.set('n', currentName);
     url.searchParams.set('m', currentMessage);
     
-    const text = `*Happy Independence Day 🇮🇳*\n\nजिस तरह हम अपने परिवार की खुशियों, सुरक्षा और तरक्की से खुश होते हैं, उसी तरह देश की प्रगति, एकता और सम्मान भी हम सभी की खुशी का कारण है।\n\nआइए इस स्वतंत्रता दिवस पर एक बेहतर भारत के निर्माण में अपना योगदान देने का संकल्प लें।\n\nआपको और आपके परिवार को 15 अगस्त की हार्दिक शुभकामनाएँ।\n\nजय हिन्द! 🇮🇳\n\n👇 *${currentName} ne aapke liye ek Vishesh tohfa bheja hai, yahan click karke dekhein:* 👇\n${url.toString()}`;
+    const text = `🇮🇳✨ Happy Independence Day 2026 ✨🇮🇳\n\nजब आपके घर में खुशियाँ होती हैं, तो दिल मुस्कुराता है...\nऔर जब हमारा 🇮🇳 तिरंगा गर्व से लहराता है, तो पूरा देश अपना परिवार सा लगता है। ❤️\n\nआज की खुशी सिर्फ़ एक त्योहार की नहीं, बल्कि उस आज़ादी की है जिसने हमें सपने देखने, आगे बढ़ने और खुलकर जीने का हक़ दिया। 🕊️✨\n\nआप और आपके परिवार का जीवन खुशियों, सम्मान और सफलता से भरा रहे। 🌸💫\n\n🧡🤍💚 तिरंगे का मान, भारत की शान 🧡🤍💚\n\n🇮🇳 जय हिन्द • वंदे मातरम् 🇮🇳\n\n👇 *${currentName} ne aapke liye ek Vishesh tohfa bheja hai, yahan click karke dekhein:* 👇\n${url.toString()}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
 });
 
