@@ -1,0 +1,2 @@
+perl -0777 -pi -e 's/absolute bottom-6 left-0 right-0 text-center px-4/absolute bottom-1 left-0 right-0 text-center px-4 translate-y-3/g' index.html
+perl -0777 -pi -e 's/<span class="text-white block mb-1">Independence<\/span>\s*<span class="text-green-500 block">Day<\/span>/<span class="text-white block mb-1">Independence Day<\/span>\n                        <span class="text-green-500 block">2026<\/span>/g' index.html
